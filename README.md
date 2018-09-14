@@ -7,7 +7,7 @@
    + network layer 아래 층에서 작동 ( OSI network  & OSI link layer 사이)
  - Process
    + 
- _ ARP Packet Format
+ - ARP Packet Format
     ![ARP Packet Format!](https://upload.wikimedia.org/wikipedia/commons/7/71/Arp-6-638.jpg "ARP Packet Format")
 ### ARP spoofing
   - ARP spoofing이란?
