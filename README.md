@@ -3,8 +3,9 @@
  - ARP란?
    + ARP는 Address Resolution Protocol의 약자로 IP 주소를 물리적 네트워크 주소로 대응시키기 위해 사용되는 프로토콜
    + 물리적 네트워크 주소(MAC) : Ethernet or 48 bit 네트워크 카드 주소
-   + IP에 의해 사용되는 프로토콜로 data link protocol에 의해 사용되는 하드웨어 주소와 IPv4(IP 네트워크 주소)를 매핑한다.
-   + network layer 아래 층에서 작동 ( OSI network  & OSI link layer 사이)
+   1. OSI 계층 3(network layer)에서 IP 주소 연결
+   2. OSI 계층 2(data link layer)에서 MAC 주소 사용하여 실질적 데이터 이동
+   + 1, 2인 IP 주소와 MAC 주소를 이어주는 역할이 ARP
  - Process 
    + 송신자 -> 수신자
      1. 데이터 보내기 전 ARP table 확인
@@ -16,5 +17,6 @@
     + ![ARP Packet Format!](https://upload.wikimedia.org/wikipedia/commons/7/71/Arp-6-638.jpg "ARP Packet Format")
 ### ARP spoofing
   - ARP spoofing이란?
-    + ARP Reply를 조작하여 
+    + 네트워크 안의 모든 기기는 인터넷으로 통하는 관문인 게이트웨이를 꼭 통해야 한다.  
+    이를 이용해 공격자 스스로 게이트웨이라고 속이고 피해자
     
