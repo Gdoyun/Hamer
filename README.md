@@ -25,8 +25,8 @@
       3. 피해자는 공격자를 게이트웨이라고 인식하고 공격자에게 패킷을 전송하게 된다.
       4. 공격자는 그 패킷을 조작하여 공격한다.
    - **Defense**  
-    1. ARP 테이블 확인
-    2. ARP spoofing 감지 (arp -a로 MAC 주소가 동일한 것을 발견)
-    3. 공격자 IP 주소 확인 후, 이 주소와 대응되는 MAC 주소 강제로 변경
-    4. 로컬 방식에서 사용되는 공격 방식이라 로컬 ARP cashe table을 static으로 변경
-     + 사전 방지책: OS 시작과 동시에 ARP cahse를 static으로 고정한다.
+    1. ARP 테이블 확인  
+    2. ARP spoofing 감지 (arp -a로 MAC 주소가 동일한 것을 발견)  
+    3. 공격자 IP 주소 확인 후, 이 주소와 대응되는 MAC 주소 강제로 변경  
+    4. 로컬 방식에서 사용되는 공격 방식이라 로컬 ARP cashe table을 static으로 변경  
+     + 사전 방지책: OS 시작과 동시에 ARP cahse를 static으로 고정한다.  
