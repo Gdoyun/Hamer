@@ -16,11 +16,17 @@
  - ARP Packet Format
     + ![ARP Packet Format!](https://upload.wikimedia.org/wikipedia/commons/7/71/Arp-6-638.jpg "ARP Packet Format")
 ### ARP spoofing
-  - ARP spoofing이란?
+  - **ARP spoofing이란?**
     + 네트워크 안의 모든 기기는 인터넷으로 통하는 관문인 게이트웨이를 꼭 통해야 한다.  
     이를 이용해 공격자 스스로 게이트웨이라고 속이고 피해자는 이를 모르고 모든 데이터를 공격자에게 전송하게 된다.
     + 과정
-      1. 공격자가 특정 IP 주소와 자신의 MAC 주소가 담긴 ARP Reply를 피해자에게 보낸다.
-      2. 피해자는 IP 주소를 공격자 MAC 주소로 인식, 패킷을 전송하게 된다.
-      3. 공격자는 그 패킷을 조작하여 공격한다.
-    
+      1. 공격자가 게이트웨이의 IP 주소와 자신의 MAC 주소가 담긴 패킷을 피해자에게 지속적으로 보낸다.
+      2. 피해자는 그 패킷을 ARP table에 저장한다.
+      3. 피해자는 공격자를 게이트웨이라고 인식하고 공격자에게 패킷을 전송하게 된다.
+      4. 공격자는 그 패킷을 조작하여 공격한다.
+   - **Defense**
+    1. ARP 테이블 확인
+    2. ARP spoofing 감지 (arp -a로 MAC 주소가 동일한 것을 발견)
+    3. 공격자 IP 주소 확인 후, 이 주소와 대응되는 MAC 주소 강제로 변경
+    4. 로컬 방식에서 사용되는 공격 방식이라 로컬 ARP cashe table을 static으로 변경
+     + 사전 방지책: OS 시작과 동시에 ARP cahse를 static으로 고정한다.
